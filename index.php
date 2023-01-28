@@ -48,7 +48,7 @@
             echo "<h2 class ='alert alert-danger'>Suklydote 3 kartus iš eilės, laukite 1 minutę</h2>";
             ob_flush();
             flush();
-            sleep(5);
+            sleep(60);
             ob_end_clean();
             $_SESSION["skaiciuoklis"] = 0;
             echo "<h2><a href='index.php'>Bandyti dar kartą</a></h2>";
@@ -92,7 +92,7 @@
             $_SESSION["zinutes_stilius"] = "alert-danger";
             $_SESSION["skaiciuoklis"] = $_SESSION["skaiciuoklis"] +1;
             if ($_SESSION["skaiciuoklis"] >= 3){
-                setcookie('palauk60', 'labas', time()+5, "/");
+                setcookie('palauk60', 'labas', time()+60, "/");
             };
             header("Location: index.php");
         }
